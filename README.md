@@ -63,3 +63,161 @@ Use the **Bar height (DIP)** setting in the mod settings. The default is `40`.
 ### Bar background
 
 Target:
+
+    TopBarRoot
+
+Style:
+
+    Background:=<color>
+
+For a blurred/translucent background, use a `WindhawkBlur` brush (see [Colors](#colors)).
+
+### Bar corner radius
+
+Target:
+
+    TopBarRoot
+
+Style:
+
+    CornerRadius=<radius>
+
+## Task list
+
+### Task button content
+
+The task button can show icons, text, or both. This is controlled by the **Task button content** setting. Options: `iconAndText`, `iconOnly`, `textOnly`.
+
+### Task button width
+
+Target:
+
+    TaskButton
+
+Style:
+
+    Width=<width>
+
+### Task icon size
+
+Target:
+
+    TaskButtonIcon
+
+Style:
+
+    Width=<size>
+    Height=<size>
+
+### Task button background
+
+Target:
+
+    TaskButton
+
+Style:
+
+    Background:=<color>
+
+## Control center
+
+### Status buttons
+
+Targets:
+
+    DisplayButton
+    SoundButton
+    WifiButton
+    BluetoothButton
+    TrayButton
+
+Style:
+
+    Background:=<color>
+
+### Flyout panels
+
+The flyout panel roots are:
+
+    DisplayFlyoutRoot
+    SoundFlyoutRoot
+    WifiFlyoutRoot
+    BluetoothFlyoutRoot
+    TrayFlyoutRoot
+
+You can style the panel background, title, rows, etc.
+
+### Toggle switches
+
+The Wi-Fi and Bluetooth toggles have targets:
+
+    WifiHeaderToggle
+    BluetoothHeaderToggle
+
+Style:
+
+    Width=<width>
+
+### Slider styling
+
+Sliders in Display and Sound panels can be targeted with:
+
+    Slider
+
+or more specific elements like `Slider#HorizontalTrackRect`.
+
+## System tray
+
+### Tray panel
+
+Target:
+
+    TrayPanel
+
+Style:
+
+    Background:=<color>
+
+### Tray items
+
+Individual tray items (from UI Automation) appear as `FlyoutListRow` elements. Style them with:
+
+    FlyoutListRow
+
+## Themes
+
+Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. Two built-in themes are available: `GreenBar` and `NoIslands`. More themes can be added in code.
+
+## Colors
+
+### Solid color
+
+Use a color name (e.g. `Red`) or a hex code (e.g. `#FF0000`). Semi-transparent colors are supported (e.g. `#80FF0000`). Use `Transparent` for fully transparent.
+
+### WindhawkBlur effect
+
+For a blurred background, use the mod's built-in `WindhawkBlur` brush:
+
+    Background:=<WindhawkBlur BlurAmount="10" TintColor="#80ff0000" />
+
+- `BlurAmount`: Radius of blur (default 10).
+- `TintColor`: Hex color (`#AARRGGBB` or `#RRGGBB`).
+- `TintOpacity`: Overrides the alpha of `TintColor`.
+
+### Gradient
+
+Use XAML gradient brushes:
+
+    Background:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Color="Yellow" Offset="0.0" /><GradientStop Color="Red" Offset="0.25" /><GradientStop Color="Blue" Offset="0.75" /><GradientStop Color="LimeGreen" Offset="1.0" /></LinearGradientBrush>
+
+### Image
+
+Use an image as background:
+
+    Background:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
+
+Replace `<image>` with a URL or local file path.
+
+---
+
+This guide covers the most common customizations. For more advanced styling, refer to the mod's **Control styles** and **Style constants** settings. Contributions and theme submissions are welcome via pull requests to [this repository](https://github.com/wasixgamer/windhawk-topbar-styling-guide).
