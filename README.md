@@ -156,6 +156,8 @@ You can style the panel background, title, etc.
 Use a color name (e.g. `Red`) or a hex code (e.g. `#FF0000`). Semi-transparent colors are supported (e.g. `#80FF0000`). Use `Transparent` for fully transparent.
 
 ### WindhawkBlur effect
+> [!NOTE]
+> The Windhawk Blur is not working currently. It will be Fixed Later.
 
 For a blurred background, use the mod's built-in `WindhawkBlur` brush:
 
