@@ -35,6 +35,17 @@ After installing the mod, open its Settings tab and adjust the styles according 
 * [Themes](#themes)
 * [Colors](#colors)
 
+
+
+## Themes
+
+Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. More themes can be added in code.
+
+| Link | Screenshot |
+| ----- | ---------- |
+| [GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) | [![GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/GreenBar/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) |
+| [NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) | [![NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/NoIslands/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) |
+
 ## Introduction
 
 The TopBar mod adds a second, fully independent taskbar docked to the top of the screen. It features:
@@ -88,7 +99,7 @@ Style:
 
 The task button can show icons, text, or both. This is controlled by the **Task button content** setting. Options: `iconAndText`, `iconOnly`, `textOnly`.
 
-### Task button width
+### Task button Stylings
 
 Target:
 
@@ -96,7 +107,9 @@ Target:
 
 Style:
 
-    Width=<width>
+    Background:=<color>
+    BorderBrush:=<color>
+    BorderThickness=<number>
 
 ### Task icon size
 
@@ -109,15 +122,6 @@ Style:
     Width=<size>
     Height=<size>
 
-### Task button background
-
-Target:
-
-    TaskButton
-
-Style:
-
-    Background:=<color>
 
 ## Control center
 
@@ -134,6 +138,8 @@ Targets:
 Style:
 
     Background:=<color>
+    BorderBrush:=<color>
+    BorderThickness=<number>
 
 ### Flyout panels
 
@@ -145,49 +151,7 @@ The flyout panel roots are:
     BluetoothFlyoutRoot
     TrayFlyoutRoot
 
-You can style the panel background, title, rows, etc.
-
-### Toggle switches
-
-The Wi-Fi and Bluetooth toggles have targets:
-
-    WifiHeaderToggle
-    BluetoothHeaderToggle
-
-Style:
-
-    Width=<width>
-
-### Slider styling
-
-Sliders in Display and Sound panels can be targeted with:
-
-    Slider
-
-or more specific elements like `Slider#HorizontalTrackRect`.
-
-## System tray
-
-### Tray panel
-
-Target:
-
-    TrayPanel
-
-Style:
-
-    Background:=<color>
-
-### Tray items
-
-Individual tray items (from UI Automation) appear as `FlyoutListRow` elements. Style them with:
-
-    FlyoutListRow
-
-## Themes
-
-Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. Two built-in themes are available: `GreenBar` and `NoIslands`. More themes can be added in code.
-
+You can style the panel background, title, etc.
 ## Colors
 
 ### Solid color
