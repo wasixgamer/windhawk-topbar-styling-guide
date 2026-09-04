@@ -12,6 +12,7 @@ After installing the mod, open its Settings tab and adjust the styles according 
 
 ## Table of contents
 
+* [Themes](#themes)
 * [Introduction](#introduction)
   * [Supported components](#supported-components)
   * [Finding targets](#finding-targets)
@@ -32,19 +33,21 @@ After installing the mod, open its Settings tab and adjust the styles according 
 * [System tray](#system-tray)
   * [Tray panel](#tray-panel)
   * [Tray items](#tray-items)
-* [Themes](#themes)
 * [Colors](#colors)
 
 
 
 ## Themes
 
-Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. More themes can be added in code.
+Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. Following is the list of themes available:
 
 | Link | Screenshot |
 | ----- | ---------- |
 | [GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) | [![GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/GreenBar/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) |
 | [NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) | [![NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/NoIslands/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) |
+
+More themes can be contributed to the mod. Contributions are welcome.
+
 
 ## Introduction
 
