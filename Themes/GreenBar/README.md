@@ -48,7 +48,9 @@ To import the theme styles:
     - target: WifiButton
       styles:
         - Background:=#27403C
-
+    - target: BatteryButton
+      styles:
+        - Background:=#27403C
     - target: BluetoothButton
       styles:
         - Background:=#27403C
