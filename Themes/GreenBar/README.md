@@ -1,4 +1,4 @@
-# GreenBar theme for TopBar For Windhawk Mod
+# GreenBar theme for TopBar For Windows Mod
 
 This Theme makes the TopBar Dark Green.
 
