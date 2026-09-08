@@ -53,7 +53,9 @@ To import the theme styles:
     - target: BluetoothButton
       styles:
         - Background:=transparent
-
+    - target: BatteryButton
+      styles:
+        - Background:=transparent
     - target: TrayButton
       styles:
         - Background:=transparent
