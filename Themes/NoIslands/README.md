@@ -1,4 +1,4 @@
-# NoIslands theme for TopBar For Windhawk Mod
+# NoIslands theme for TopBar For Windows Mod
 
 This Theme makes the TopBar not have the islands. It makes it cover full width and height of the grid.
 
@@ -53,7 +53,9 @@ To import the theme styles:
     - target: BluetoothButton
       styles:
         - Background:=transparent
-
+    - target: BatteryButton
+      styles:
+        - Background:=transparent
     - target: TrayButton
       styles:
         - Background:=transparent

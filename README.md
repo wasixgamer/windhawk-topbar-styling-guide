@@ -1,5 +1,14 @@
 # The Windhawk TopBar Styling Guide
 
+## Support the Creator
+
+If you enjoy this mod and want to support its development, consider becoming a patron:
+
+[![Patreon](https://img.shields.io/badge/Support%20on-Patreon-orange)](https://www.patreon.com/WasiXGamer/join)
+
+Your support helps me continue improving the TopBar and adding new features. Thank you!
+
+
 This guide provides a collection of styling customizations for the **TopBar for Windhawk** mod, a feature-rich top taskbar hosted by a dedicated Explorer tool process.
 
 If you're not familiar with Windhawk, here are the steps for installing the mod:

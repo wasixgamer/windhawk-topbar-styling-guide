@@ -1,4 +1,4 @@
-# GreenBar theme for TopBar For Windhawk Mod
+# GreenBar theme for TopBar For Windows Mod
 
 This Theme makes the TopBar Dark Green.
 
@@ -48,7 +48,9 @@ To import the theme styles:
     - target: WifiButton
       styles:
         - Background:=#27403C
-
+    - target: BatteryButton
+      styles:
+        - Background:=#27403C
     - target: BluetoothButton
       styles:
         - Background:=#27403C
