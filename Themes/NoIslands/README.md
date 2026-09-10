@@ -11,7 +11,7 @@ This Theme makes the TopBar not have the islands. It makes it cover full width a
 
 To import the theme styles:
 
-* Open the TopBar for Windhawk mod in Windhawk.
+* Open the TopBar for Windows mod in Windhawk.
 * Go to the "Settings" tab and select "Textual mode".
 * Copy the content below to the text box and click "Save settings".
 
