@@ -21,9 +21,16 @@ To import the theme styles:
 ```yaml
 
 controlStyles:
-  - target: TopBarRoot, MenuFlyoutPresenter, FlyoutPresenter > Grid > Border#PART_BackgroundBorder
+  - target: TopBarRoot
     styles:
       - Background:=#102A27
+  - target: Canvas > MenuFlyoutPresenter > Grid > Border#PART_BackgroundBorder
+    styles:
+      - Background:=#1B2E2B
+  - target: Canvas > FlyoutPresenter > Grid > Border#PART_BackgroundBorder
+    styles:
+      - IconColor=#7FD1C4
+      - Background:=#1B2E2B
   - target: FlyoutBlurHost
     styles:
       - Background=transparent   
