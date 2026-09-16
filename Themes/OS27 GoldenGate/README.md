@@ -1,4 +1,4 @@
-# OS27 Golden Gate theme for TopBar For Windhawk Mod
+# OS27 Golden Gate theme for TopBar For Windows Mod
 
 This Theme makes the TopBar look inspired to OS27 GoldenGate.
 
@@ -20,7 +20,6 @@ To import the theme styles:
 
 ```yaml
 
-theme: 'OS27 GoldenGate'
 controlStyles:
 - target: Grid#BarRoot > Grid#TopBarRoot
   styles:
