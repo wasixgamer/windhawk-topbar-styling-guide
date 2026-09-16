@@ -20,7 +20,6 @@ To import the theme styles:
 
 ```yaml
 
-theme: 'OS27 GoldenGate'
 controlStyles:
 - target: Grid#BarRoot > Grid#TopBarRoot
   styles:
