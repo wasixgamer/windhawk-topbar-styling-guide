@@ -20,48 +20,16 @@ To import the theme styles:
 
 ```yaml
 
-  controlStyles:
-    - target: TopBarRoot
-      styles:
-        - Background:=#102A27
-
-    - target: StartButton
-      styles:
-        - Background:=#27403C
-
-    - target: SearchButton
-      styles:
-        - Background:=#27403C
-
-    - target: ClockButton
-      styles:
-        - Background:=#27403C
-
-    - target: DisplayButton
-      styles:
-        - Background:=#27403C
-
-    - target: SoundButton
-      styles:
-        - Background:=#27403C
-
-    - target: WifiButton
-      styles:
-        - Background:=#27403C
-    - target: BatteryButton
-      styles:
-        - Background:=#27403C
-    - target: BluetoothButton
-      styles:
-        - Background:=#27403C
-
-    - target: TrayButton
-      styles:
-        - Background:=#27403C
-
-    - target: TaskButton
-      styles:
-        - Background:=#27403C
+controlStyles:
+  - target: TopBarRoot, MenuFlyoutPresenter, FlyoutPresenter > Grid > Border#PART_BackgroundBorder
+    styles:
+      - Background:=#102A27
+  - target: FlyoutBlurHost
+    styles:
+      - Background=transparent   
+  - target: StartButton, SearchButton, ClockButton, DisplayButton, SoundButton, WifiButton, BatteryButton, BluetoothButton, TrayButton, TaskButton
+    styles:
+      - Background:=#27403C
 
 ```
 </details>
