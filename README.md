@@ -74,11 +74,8 @@ The TopBar mod adds a second, fully independent taskbar docked to the top of the
 
 ### Finding targets
 
-Run **[UWPSpy](https://github.com/m417z/UWPSpy/releases/)** against the TopBar's
-`explorer.exe` process (the one started with `-tool-mod windhawk-topbar`), or
-press **Ctrl+D** while hovering any TopBar element to show a small tooltip with
-the element's `ClassName#Name`. Ctrl+D works on the top bar and inside any open
-flyout or menu.
+Run **[UWPSpy](https://github.com/m417z/UWPSpy/releases/)** on the TopBar's `explorer.exe` process. Ctrl+D shortcut works on the topbar elements but for Flyouts, you will have to scroll down the targets in `Windows.UI.Xaml.PopupRoot`.
+
 
 See also: [How to find targets using UWPSpy](https://github.com/bbmaster123/FWFU/blob/main/Guides/uwpspy.md).
 
@@ -277,48 +274,19 @@ Style:
     Width=<size>
     MinWidth=<size>
 
-## System tray
-
-### Tray panel
-
-Target:
-
-    TrayPanel
-
-Style:
-
-    Background:=<color>
-    CornerRadius=<radius>
-    Margin=<left>,<top>,<right>,<bottom>
-
-### Tray items
-
-Individual tray buttons are named after the button they wrap:
-
-    ClockButton / ClockText
-    BatteryButton
-    WeatherButton / WeatherButtonText / WeatherIcon
-    RecycleBinButton / RecycleBinIcon
-    ResourceButton
 
 ## Weather
 
 Targets in the weather button and its flyout:
 
     WeatherButton / WeatherButtonText
-    WeatherIcon
-    WeatherLocationBox
-    WeatherSetLocationButton
-    WeatherCurrentTemp
-    WeatherDesc
+
 
 ## Recycle bin
 
 Targets in the recycle bin button and its flyout:
 
     RecycleBinButton / RecycleBinIcon
-    RecycleBinSizeText
-    RecycleBinCountText
     RecycleBinEmptyButton
 
 ## Resource monitor
