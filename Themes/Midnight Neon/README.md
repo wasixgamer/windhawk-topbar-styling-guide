@@ -1,6 +1,6 @@
 # Midnight Neon theme for TopBar For Windows Mod
 
-This Theme makes the TopBar Dark Green.
+This Theme makes the TopBar look Neon, inspired a bit from Cyberpunk.
 
 **Author**: [WasiXGamer](https://github.com/wasixgamer)
 
