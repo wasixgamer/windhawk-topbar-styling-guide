@@ -8,7 +8,6 @@ If you enjoy this mod and want to support its development, consider becoming a p
 
 Your support helps me continue improving the TopBar and adding new features. Thank you!
 
-
 This guide provides a collection of styling customizations for the **TopBar for Windhawk** mod, a feature-rich top taskbar hosted by a dedicated Explorer tool process.
 
 If you're not familiar with Windhawk, here are the steps for installing the mod:
@@ -28,6 +27,7 @@ After installing the mod, open its Settings tab and adjust the styles according 
 * [Style syntax](#style-syntax)
   * [Target syntax](#target-syntax)
   * [Value syntax](#value-syntax)
+  * [Style constants](#style-constants)
 * [General](#general)
   * [Bar Stylings](#bar-stylings)
 * [Task list](#task-list)
@@ -36,9 +36,9 @@ After installing the mod, open its Settings tab and adjust the styles according 
   * [Status buttons](#status-buttons)
   * [Flyout panels](#flyout-panels)
   * [Toggle switches](#toggle-switches)
-* [System tray](#system-tray)
-  * [Tray panel](#tray-panel)
-  * [Tray items](#tray-items)
+* [Start menu](#start-menu)
+* [Search](#search)
+* [Media Player](#media-player)
 * [Weather](#weather)
 * [Recycle bin](#recycle-bin)
 * [Resource monitor](#resource-monitor)
@@ -53,6 +53,7 @@ Themes are collections of styles that can be selected from the **Theme** dropdow
 | [GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) | [![GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/GreenBar/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) |
 | [NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) | [![NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/NoIslands/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) |
 | [OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) | [![OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/OS27%20GoldenGate/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) |
+| [Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) | [![Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/Midnight%20Neon/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) |
 
 More themes can be contributed to the mod. Contributions are welcome.
 
@@ -60,16 +61,20 @@ More themes can be contributed to the mod. Contributions are welcome.
 
 The TopBar mod adds a second, fully independent taskbar docked to the top of the screen. It features:
 
-- **Task list** — window icons, titles, click-to-activate, double-click maximize.
-- **Control centre** — Display (brightness, Dark Mode), Sound (volume, per-app mixer, device picker, media controls), Wi-Fi (scan/connect), Bluetooth (connect/disconnect), Battery, Weather, Recycle Bin, and Resource Monitor (CPU/RAM/GPU).
+- **Task list** — window icons, titles, click-to-activate, double-click maximize, per-window right-click menu. Can be swapped for a single **Application name** button showing the current foreground app.
+- **Control centre** — Display (brightness, per-monitor sliders, Dark Mode, Night light), Sound (volume, per-app mixer, output device picker, mute), Wi-Fi (scan / connect / disconnect / password entry), Bluetooth (scan, pair, connect, battery level), Battery (percentage, health), Weather (current conditions, hourly forecast, location search), Recycle Bin (size, item count, empty with confirm), Resource Monitor (CPU / RAM / GPU tabs with live graph, GPU selector), and Media Player (album art, transport controls, live progress bar, audio-reactive visualizer).
+- **Start menu replacement** — custom Start with account panel, power menu, search box and a 5-column all-apps grid (Win32 shortcuts + UWP apps). Optional: make it the default for Win key and taskbar Start.
+- **Search replacement** — Spotlight-style search across apps, files, Windows Settings pages and Control Panel items. Optional: make it the default for Win+S / Win+Q and the taskbar search box.
 - **Full styling** via Control styles.
 - **Background translucency** tinting for the TopBar, and WindhawkBlur for flyouts and context menus.
+- **Import / Export** — save or restore the entire configuration as JSON.
 
 ### Supported components
 
-- Top taskbar
-- Flyout panels (Display, Sound, Wi-Fi, Bluetooth, Battery, Weather, Recycle Bin, Resource Monitor, Settings)
-- Context menus (Start, Task buttons, Tray items)
+- Top taskbar (root, panels, every button)
+- Flyout panels (Display, Sound, Wi-Fi, Bluetooth, Battery, Weather, Recycle Bin, Resource Monitor, Control Center, Media Player)
+- Start menu and Search flyouts
+- Context menus (Start, Task buttons, Tray items, Search results, Start tiles)
 - All flyouts and menus including submenus
 
 ### Finding targets
@@ -121,6 +126,34 @@ Captured variables are per-XamlRoot and are evaluated in the visual tree, so a
 consumer reads the value of the closest capturer above it in the tree. This is
 useful for deriving sizes from live layout — for example capturing a
 `TaskButton`'s `ActualWidth` and using it to size something else.
+
+### Style constants
+
+Style constants let you name a value once and reuse it across many rules. Define
+them under **Style constants** as `name=value` pairs, then reference them with
+`$name` anywhere in a style value:
+
+```yaml
+styleConstants:
+  - 'NeonAccent=#8FD9F0'
+  - 'NeonCard=#16243A'
+  - 'GlassBlur=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
+
+controlStyles:
+  - target: SettingsButton
+    styles:
+      - 'Background:=$NeonCard'
+      - 'IconColor=$NeonAccent'
+
+  - target: FlyoutBlurHost
+    styles:
+      - 'Background:=$GlassBlur'
+```
+
+Constants work in every value position, including inside `<WindhawkBlur …>`,
+gradients, and XAML fragments. The OS27 GoldenGate theme uses two constants
+(`$GoldenGateBackground`, `$GoldenGateBorder`) so a single edit retunes the
+whole look.
 
 ## General
 
@@ -174,6 +207,20 @@ Style:
     BorderBrush:=<color>
     BorderThickness=<number>
 
+### Panels
+
+The bar is split into four sections. Each is a `StackPanel` and can be styled
+directly:
+
+    LeftPanel
+    CenterPanel
+    TrayPanel
+    ClockPanel
+
+`TaskListPanel` is a sibling panel — the middle section holds either the task
+list or the application-name button depending on the **App title button mode**
+setting.
+
 ## Task list
 
 ### Task button content
@@ -216,6 +263,14 @@ Style:
     Foreground=<color>
     FontSize=<size>
 
+### Application name button
+
+When **App title button mode** is set to `applicationButtons`, the middle section
+shows a single button with the current foreground application's name:
+
+    AppTitleButton
+    AppTitleText
+
 ## Control center
 
 ### Status buttons
@@ -231,6 +286,8 @@ Targets:
     RecycleBinButton
     ResourceButton
     SettingsButton
+    ControlCenterButton
+    MediaButton
 
 Style:
 
@@ -251,6 +308,8 @@ The flyout panel roots are:
     WeatherFlyoutRoot
     RecycleBinFlyoutRoot
     ResourceFlyoutRoot
+    MediaFlyoutRoot
+    ControlCenterFlyoutRoot
 
 Flyout shells (the presenter border behind every flyout) can be styled with:
 
@@ -262,6 +321,16 @@ And context menu shells with:
 
 A rule targeting `Border#PART_BackgroundBorder` on its own hits every flyout
 and menu shell at once.
+
+### Common flyout elements
+
+Every control flyout shares these named elements:
+
+    FlyoutBlurHost      — the blur host border behind the whole flyout
+    FlyoutTitle         — the panel's title TextBlock
+    FlyoutDivider       — 1px separators between sections
+    FlyoutListRow       — clickable list rows (Wi-Fi networks, devices, …)
+    FlyoutFooterLink    — "open the real Settings page" footer links
 
 ### Toggle switches
 
@@ -277,40 +346,80 @@ Style:
     Width=<size>
     MinWidth=<size>
 
-## System tray
+### Wi-Fi panel
 
-### Tray panel
+    WifiHeaderGrid / WifiHeaderLeftStack / WifiHeaderRightStack
+    WifiProgressRing
+    WifiRefreshButton
+    WifiNetworkRow
+    WifiIcon
+    WifiPasswordBox
+    WifiConnectButton / WifiCancelButton
 
-Target:
+### Bluetooth panel
 
-    TrayPanel
+    BluetoothHeaderGrid / BluetoothHeaderLeftStack / BluetoothHeaderRightStack
+    BluetoothProgressRing
+    BluetoothRefreshButton
+    BluetoothDeviceRow
 
-Style:
+### Media Player flyout
 
-    Background:=<color>
-    CornerRadius=<radius>
-    Margin=<left>,<top>,<right>,<bottom>
+    MediaProgressBar
+    MediaPositionText
+    MediaEndText
 
-### Tray items
+The transport buttons inside the flyout are named `MediaTransportButton`; the
+ones embedded in the topbar's Media button also use that name.
 
-Individual tray buttons are named after the button they wrap:
+## Start menu
 
-    ClockButton / ClockText
-    BatteryButton
-    WeatherButton / WeatherButtonText / WeatherIcon
-    RecycleBinButton / RecycleBinIcon
-    ResourceButton
+The TopBar Start menu is a XAML flyout with several named elements:
+
+    StartMenuSearchBox        — the search box at the top
+    StartMenuPowerButton      — power glyph button (right of the search box)
+    StartMenuAccountButton    — avatar / account button (left of the search box)
+
+App tiles in the grid use the shared `TaskButton`-like look but aren't
+individually named. Style them via the ancestor chain, e.g.:
+
+    Grid > Button
+
+## Search
+
+The Spotlight-style Search flyout:
+
+    SearchBlurHost            — the blur host border behind the whole flyout
+    SpotlightSearchBox        — the main search input
+    SearchAnchor              — hidden anchor Grid used for placement (do not style)
+    SearchResultRow           — individual result rows
+
+## Media Player
+
+Targets in the media button and its flyout:
+
+    MediaButton
+    MediaTransportButton      — previous / play-pause / next
+    MediaProgressBar          — live progress bar in the flyout
+    MediaPositionText         — current time (left of the bar)
+    MediaEndText              — total length (right of the bar)
 
 ## Weather
 
 Targets in the weather button and its flyout:
 
-    WeatherButton / WeatherButtonText
+    WeatherButton / WeatherButtonContent
     WeatherIcon
-    WeatherLocationBox
-    WeatherSetLocationButton
+    WeatherSearchBox
+    WeatherSearchResults
+    WeatherCityRow
+    WeatherPickerCancel
+    WeatherScrollLeft / WeatherScrollRight
+    WeatherChangeLocation
+    WeatherCityName
     WeatherCurrentTemp
     WeatherDesc
+    WeatherMinMax
 
 ## Recycle bin
 
@@ -320,6 +429,9 @@ Targets in the recycle bin button and its flyout:
     RecycleBinSizeText
     RecycleBinCountText
     RecycleBinEmptyButton
+    RecycleBinConfirmButton
+    RecycleBinCancelButton
+    RecycleBinWarning
 
 ## Resource monitor
 
@@ -327,6 +439,20 @@ Targets in the resource button and its flyout:
 
     ResourceButton
     ResourceFlyoutRoot
+    ResourceTabPanel
+    ResourceCpuTab / ResourceCpuTabIcon / ResourceCpuTabText
+    ResourceRamTab / ResourceRamTabIcon / ResourceRamTabText
+    ResourceGpuTab / ResourceGpuTabIcon / ResourceGpuTabText
+    ResourceGraphBorder
+    ResourceGraphCanvas
+    ResourceContentGrid
+    ResourceStatsGrid
+    InfoIsland                — the component-info card above the graph
+    InfoCpuLabel / InfoCpuName
+    InfoRamLabel / InfoRamName
+    InfoGpuLabel
+    GpuSelector               — the GPU ComboBox
+    StatLabel0..3 / StatValue0..3
 
 ## Colors
 
