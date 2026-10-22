@@ -137,18 +137,411 @@ Style constants let you name a value once and reuse it across many rules. Define
 them under **Style constants** as `name=value` pairs, then reference them with
 `$name` anywhere in a style value:
 
-```yaml
-styleConstants:
-  - 'NeonAccent=#8FD9F0'
-  - 'NeonCard=#16243A'
-  - 'GlassBlur=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
+    styleConstants:
+      - 'NeonAccent=#8FD9F0'
+      - 'NeonCard=#16243A'
+      - 'GlassBlur=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
 
-controlStyles:
-  - target: SettingsButton
-    styles:
-      - 'Background:=$NeonCard'
-      - 'IconColor=$NeonAccent'
+    controlStyles:
+      - target: SettingsButton
+        styles:
+          - 'Background:=$NeonCard'
+          - 'IconColor=$NeonAccent'
 
-  - target: FlyoutBlurHost
-    styles:
-      - 'Background:=$GlassBlur'
+      - target: FlyoutBlurHost
+        styles:
+          - 'Background:=$GlassBlur'
+
+Constants work in every value position, including inside `<WindhawkBlur …>`,
+gradients, and XAML fragments. The OS27 GoldenGate theme uses two constants
+(`$GoldenGateBackground`, `$GoldenGateBorder`) so a single edit retunes the
+whole look.
+
+## General
+
+### Bar height
+
+Use the **Bar height (DIP)** setting in the mod settings. The default is `40`.
+
+### Bar background
+
+Target:
+
+    TopBarRoot
+
+Style:
+
+    Background:=<color>
+
+For a blurred/translucent background, use a `WindhawkBlur` brush (see [Colors](#colors)).
+
+### Bar corner radius
+
+Target:
+
+    TopBarRoot
+
+Style:
+
+    CornerRadius=<radius>
+
+### Bar margin
+
+Target:
+
+    TopBarRoot
+
+Style:
+
+    Margin=<left>,<top>,<right>,<bottom>
+
+Useful for floating the bar off the screen edge (e.g. `Margin=6,4,6,0`), and for
+revealing the corner radius all the way around.
+
+### Bar border
+
+Target:
+
+    TopBarRoot
+
+Style:
+
+    BorderBrush:=<color>
+    BorderThickness=<number>
+
+### Panels
+
+The bar is split into four sections. Each is a `StackPanel` and can be styled
+directly:
+
+    LeftPanel
+    CenterPanel
+    TrayPanel
+    ClockPanel
+
+`TaskListPanel` is a sibling panel — the middle section holds either the task
+list or the application-name button depending on the **App title button mode**
+setting.
+
+### Auto-Hide & Activation
+
+In **Behaviour** settings, you can adjust the TopBar auto-hide timings:
+- **Auto-hide animation duration** (`topBarAutoHideMs`): Controls the slide speed.
+- **Reveal delay** (`topBarRevealDelayMs`): Time the cursor must hover before revealing.
+- **Hide delay** (`topBarHideDelayMs`): Time the cursor must leave before hiding.
+
+## Task list
+
+### Task button content
+
+The task button can show icons, text, or both. This is controlled by the **Task button content** setting. Options: `iconAndText`, `iconOnly`, `textOnly`.
+
+### Task button Stylings
+
+Target:
+
+    TaskButton
+
+Style:
+
+    Background:=<color>
+    BorderBrush:=<color>
+    BorderThickness=<number>
+    CornerRadius=<radius>
+    Margin=<left>,<top>,<right>,<bottom>
+
+### Task icon size
+
+Target:
+
+    TaskButtonIcon
+
+Style:
+
+    Width=<size>
+    Height=<size>
+
+### Task button text
+
+Target:
+
+    TaskButtonText
+
+Style:
+
+    Foreground=<color>
+    FontSize=<size>
+
+### Application name button
+
+When **App title button mode** is set to `applicationButtons`, the middle section
+shows a single button with the current foreground application's name:
+
+    AppTitleButton
+    AppTitleText
+
+## Control center
+
+### Status buttons
+
+Targets:
+
+    DisplayButton
+    SoundButton
+    WifiButton
+    BluetoothButton
+    BatteryButton
+    WeatherButton
+    RecycleBinButton
+    ResourceButton
+    SettingsButton
+    ControlCenterButton
+    MediaButton
+    NotificationsButton
+    TrayIconButton
+
+Style:
+
+    Background:=<color>
+    BorderBrush:=<color>
+    BorderThickness=<number>
+    CornerRadius=<radius>
+
+### Control Center Tiles
+
+Inside the Control Center flyout, the grid toggles use shared element names. You can style all of them at once, or target specific ones via their parent chain:
+
+    QuickToggleTile
+    ControlCenterCustomizeButton
+    ExpanderHeader
+
+### Flyout panels
+
+The flyout panel roots are:
+
+    DisplayFlyoutRoot
+    SoundFlyoutRoot
+    WifiFlyoutRoot
+    BluetoothFlyoutRoot
+    BatteryFlyoutRoot
+    WeatherFlyoutRoot
+    RecycleBinFlyoutRoot
+    ResourceFlyoutRoot
+    MediaFlyoutRoot
+    ControlCenterFlyoutRoot
+    TrayFlyoutRoot
+    NotificationsFlyoutRoot
+
+Flyout shells (the presenter border behind every flyout) can be styled with:
+
+    Canvas > FlyoutPresenter > Grid > Border#PART_BackgroundBorder
+
+And context menu shells with:
+
+    Canvas > MenuFlyoutPresenter > Grid > Border#PART_BackgroundBorder
+
+A rule targeting `Border#PART_BackgroundBorder` on its own hits every flyout
+and menu shell at once.
+
+### Common flyout elements
+
+Every control flyout shares these named elements:
+
+    FlyoutBlurHost      — the blur host border behind the whole flyout
+    FlyoutTitle         — the panel's title TextBlock
+    FlyoutDivider       — 1px separators between sections
+    FlyoutListRow       — clickable list rows (Wi-Fi networks, devices, …)
+    FlyoutFooterLink    — "open the real Settings page" footer links
+
+### Toggle switches
+
+Toggle switches appear in the Wi-Fi and Bluetooth panel headers, and Control Center.
+
+Targets:
+
+    WifiHeaderToggle
+    BluetoothHeaderToggle
+
+Style:
+
+    Width=<size>
+    MinWidth=<size>
+
+### Wi-Fi panel
+
+    WifiHeaderGrid / WifiHeaderLeftStack / WifiHeaderRightStack
+    WifiProgressRing
+    WifiRefreshButton
+    WifiNetworkRow
+    WifiIcon
+    WifiPasswordBox
+    WifiConnectButton / WifiCancelButton
+
+### Bluetooth panel
+
+    BluetoothHeaderGrid / BluetoothHeaderLeftStack / BluetoothHeaderRightStack
+    BluetoothProgressRing
+    BluetoothRefreshButton
+    BluetoothDeviceRow
+
+### Media Player flyout
+
+    MediaProgressBar
+    MediaPositionText
+    MediaEndText
+
+The transport buttons inside the flyout are named `MediaTransportButton`; the
+ones embedded in the topbar's Media button also use that name.
+
+## Start menu
+
+The TopBar Start menu is a XAML flyout with several named elements:
+
+    StartMenuSearchBox        — the search box at the top
+    StartMenuPowerButton      — power glyph button (right of the search box)
+    StartMenuAccountButton    — avatar / account button (left of the search box)
+
+App tiles in the grid use the shared `TaskButton`-like look but aren't
+individually named. Style them via the ancestor chain, e.g.:
+
+    Grid > Button
+
+## Search
+
+The Spotlight-style Search flyout:
+
+    SearchBlurHost            — the blur host border behind the whole flyout
+    SpotlightSearchBox        — the main search input
+    SearchAnchor              — hidden anchor Grid used for placement (do not style)
+    SearchResultRow           — individual result rows
+
+## Media Player
+
+Targets in the media button and its flyout:
+
+    MediaButton
+    MediaTransportButton      — previous / play-pause / next
+    MediaProgressBar          — live progress bar in the flyout
+    MediaPositionText         — current time (left of the bar)
+    MediaEndText              — total length (right of the bar)
+
+## Weather
+
+Targets in the weather button and its flyout:
+
+    WeatherButton / WeatherButtonContent
+    WeatherIcon
+    WeatherSearchBox
+    WeatherSearchResults
+    WeatherCityRow
+    WeatherPickerCancel
+    WeatherScrollLeft / WeatherScrollRight
+    WeatherChangeLocation
+    WeatherCityName
+    WeatherCurrentTemp
+    WeatherDesc
+    WeatherMinMax
+    WeatherDayButton
+    WeatherHourlyHost
+    WeatherHourlyCell
+
+## Recycle bin
+
+Targets in the recycle bin button and its flyout:
+
+    RecycleBinButton / RecycleBinIcon
+    RecycleBinSizeText
+    RecycleBinCountText
+    RecycleBinEmptyButton
+    RecycleBinConfirmButton
+    RecycleBinCancelButton
+    RecycleBinWarning
+
+## Resource monitor
+
+Targets in the resource button and its flyout:
+
+    ResourceButton
+    ResourceFlyoutRoot
+    ResourceTabPanel
+    ResourceCpuTab / ResourceCpuTabIcon / ResourceCpuTabText
+    ResourceRamTab / ResourceRamTabIcon / ResourceRamTabText
+    ResourceGpuTab / ResourceGpuTabIcon / ResourceGpuTabText
+    ResourceGraphBorder
+    ResourceGraphCanvas
+    ResourceContentGrid
+    ResourceStatsGrid
+    InfoIsland                — the component-info card above the graph
+    InfoCpuLabel / InfoCpuName
+    InfoRamLabel / InfoRamName
+    InfoGpuLabel
+    GpuSelector               — the GPU ComboBox
+    StatLabel0..3 / StatValue0..3
+
+## System Tray
+
+Targets in the system tray flyout:
+
+    TrayFlyoutRoot
+    TrayIconRow
+    TrayIconTile
+    TrayIconTileImage
+    TrayIconTileGlyph
+
+## Notifications
+
+Targets in the notifications flyout:
+
+    NotificationsFlyoutRoot
+    NotificationsClearAllButton
+    NotificationsDoNotDisturbButton
+    WindowsNotificationCard
+    NotificationCloseButton
+    NotificationShowMoreButton
+    NotificationCloseAppButton
+    OpenNativeNotificationsRow
+
+## Colors
+
+### Solid color
+
+Use a color name (e.g. `Red`) or a hex code (e.g. `#FF0000`). Semi-transparent colors are supported (e.g. `#80FF0000`). Use `Transparent` for fully transparent.
+
+### WindhawkBlur effect
+
+For a blurred background, use the mod's built-in `WindhawkBlur` brush:
+
+    Background:=<WindhawkBlur BlurAmount="10" TintColor="#80ff0000" />
+
+- `BlurAmount`: Radius of blur.
+- `TintColor`: Hex color (`#AARRGGBB` or `#RRGGBB`).
+- `TintOpacity`: Overrides the alpha of `TintColor`.
+
+`TintColor` and `TintOpacity` are both optional. Leaving both off gives a plain
+blur with no tint overlay:
+
+    Background:=<WindhawkBlur BlurAmount="18" />
+
+WindhawkBlur can be used on any brush-typed property, not just `Background`:
+`Fill`, `BorderBrush`, `Stroke`, and so on. It works on the top bar, all
+flyouts, and all context menus and submenus.
+
+### Gradient
+
+Use XAML gradient brushes:
+
+    Background:=<LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5"><GradientStop Color="Yellow" Offset="0.0" /><GradientStop Color="Red" Offset="0.25" /><GradientStop Color="Blue" Offset="0.75" /><GradientStop Color="LimeGreen" Offset="1.0" /></LinearGradientBrush>
+
+### Image
+
+Use an image as background:
+
+    Background:=<ImageBrush Stretch="UniformToFill" ImageSource="<image>" />
+
+Replace `<image>` with a URL or local file path.
+
+---
+
+## Work in progress
+
+*This document is a work in progress, contributions are welcome.*
