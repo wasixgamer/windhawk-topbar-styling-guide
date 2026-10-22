@@ -223,13 +223,6 @@ directly:
 list or the application-name button depending on the **App title button mode**
 setting.
 
-### Auto-Hide & Activation
-
-In **Behaviour** settings, you can adjust the TopBar auto-hide timings:
-- **Auto-hide animation duration** (`topBarAutoHideMs`): Controls the slide speed.
-- **Reveal delay** (`topBarRevealDelayMs`): Time the cursor must hover before revealing.
-- **Hide delay** (`topBarHideDelayMs`): Time the cursor must leave before hiding.
-
 ## Task list
 
 ### Task button content
