@@ -23,7 +23,6 @@ To import the theme styles:
 controlStyles:
   - target: TopBarRoot
     styles:
-<<<<<<< HEAD
       - 'Background:=#102A27'
       - 'IconColor=#7FD1C4'
 
@@ -100,7 +99,6 @@ controlStyles:
       - 'IconColor=#7FD1C4'
       - 'Background:=#1B2E2B'
 
-=======
       - Background:=#102A27
   - target: Canvas > MenuFlyoutPresenter > Grid > Border#PART_BackgroundBorder
     styles:
@@ -109,7 +107,6 @@ controlStyles:
     styles:
       - IconColor=#7FD1C4
       - Background:=#1B2E2B
->>>>>>> 1b8f46271a8dbb08c76a8d59b0dc1aa6bb3e24cb
   - target: FlyoutBlurHost
     styles:
       - 'Background:=#1B2E2B'
