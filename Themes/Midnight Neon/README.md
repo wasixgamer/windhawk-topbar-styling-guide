@@ -27,7 +27,6 @@ controlStyles:
       - 'Background:=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Offset="0" Color="#0A1628"/><GradientStop Offset="0.5" Color="#12203A"/><GradientStop Offset="1" Color="#0E1B33"/></LinearGradientBrush>'
       - 'IconColor=#8FD9F0'
       - CornerRadius=12
-
   - target: StartButton
     styles:
       - 'Background:=#182038'
@@ -35,7 +34,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#B8A5FF'
-
   - target: SearchButton
     styles:
       - 'Background:=#182038'
@@ -43,7 +41,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FD9F0'
-
   - target: ResourceButton
     styles:
       - 'Background:=#16243A'
@@ -51,7 +48,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#7FE0BC'
-
   - target: WeatherButton
     styles:
       - 'Background:=#182038'
@@ -59,7 +55,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#F5CE6B'
-
   - target: SettingsButton
     styles:
       - 'Background:=#16243A'
@@ -67,7 +62,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FD9F0'
-
   - target: MediaButton
     styles:
       - 'Background:=#1E1E38'
@@ -75,13 +69,11 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#E8A5C8'
-
   - target: MediaTransportButton
     styles:
       - 'Background:=#252540'
       - BorderThickness=0
       - CornerRadius=8
-
   - target: DisplayButton
     styles:
       - 'Background:=#16243A'
@@ -89,7 +81,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#E8C784'
-
   - target: SoundButton
     styles:
       - 'Background:=#16243A'
@@ -97,7 +88,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FD9F0'
-
   - target: WifiButton
     styles:
       - 'Background:=#16243A'
@@ -105,7 +95,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FBBE8'
-
   - target: BluetoothButton
     styles:
       - 'Background:=#16243A'
@@ -113,14 +102,12 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#B8A5FF'
-
   - target: BatteryButton
     styles:
       - 'Background:=#16243A'
       - 'BorderBrush:=#3334D399'
       - BorderThickness=1
       - CornerRadius=10
-
   - target: RecycleBinButton
     styles:
       - 'Background:=#1E1E38'
@@ -128,7 +115,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#E8A5C8'
-
   - target: ControlCenterButton
     styles:
       - 'Background:=#16243A'
@@ -136,7 +122,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FD9F0'
-
   - target: ClockButton
     styles:
       - 'Background:=#16243A'
@@ -144,19 +129,16 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=4,4,6,4
-
   - target: ClockText
     styles:
       - 'Foreground=#B8DCEA'
       - FontSize=14
-
   - target: TaskButton
     styles:
       - 'Background:=#16243A'
       - 'BorderBrush:=#2A3552'
       - BorderThickness=1
       - CornerRadius=10
-
   - target: AppTitleButton
     styles:
       - 'Background:=#16243A'
@@ -164,20 +146,16 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - 'IconColor=#8FD9F0'
-
   - target: FlyoutBlurHost
     styles:
       - 'Background:=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
       - CornerRadius=14
-
   - target: FlyoutPresenter
     styles:
       - CornerRadius=14
-
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=14
-
   - target: 'Canvas > FlyoutPresenter > Grid > Border#PART_BackgroundBorder'
     styles:
       - 'Background:=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.7" />'
