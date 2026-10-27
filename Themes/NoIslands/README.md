@@ -25,71 +25,60 @@ controlStyles:
     styles:
       - Margin=0
       - CornerRadius=0
-
   - target: WeatherButton
     styles:
       - 'Background:=transparent'
-
   - target: RecycleBinButton
     styles:
       - 'Background:=transparent'
-
   - target: SettingsButton
     styles:
       - 'Background:=transparent'
-
   - target: StartButton
     styles:
       - 'Background:=transparent'
-
   - target: SearchButton
     styles:
       - 'Background:=transparent'
-
   - target: ClockButton
     styles:
       - 'Background:=transparent'
-
   - target: DisplayButton
     styles:
       - 'Background:=transparent'
-
   - target: SoundButton
     styles:
       - 'Background:=transparent'
-
   - target: WifiButton
     styles:
       - 'Background:=transparent'
-
   - target: BluetoothButton
     styles:
       - 'Background:=transparent'
-
   - target: BatteryButton
     styles:
       - 'Background:=transparent'
-
   - target: ControlCenterButton
     styles:
       - 'Background:=transparent'
-
+  - target: NotificationsButton
+    styles:
+      - 'Background:=transparent'
   - target: ResourceButton
     styles:
       - 'Background:=transparent'
-
+  - target: TrayIconButton
+    styles:
+      - 'Background:=transparent'
   - target: TaskButton
     styles:
       - 'Background:=transparent'
-
   - target: AppTitleButton
     styles:
       - 'Background:=transparent'
-
   - target: MediaButton
     styles:
       - 'Background:=transparent'
-
   - target: MediaTransportButton
     styles:
       - 'Background:=transparent'

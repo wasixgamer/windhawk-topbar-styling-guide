@@ -31,34 +31,27 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=14
       - Margin=6,4,6,0
-
   - target: FlyoutPresenter
     styles:
       - CornerRadius=20
-
   - target: 'FlyoutPresenter > Border#PART_BackgroundBorder'
     styles:
       - CornerRadius=20
       - BorderThickness=1
-
   - target: 'FlyoutPresenter > Border#PART_BackgroundBorder > ContentPresenter'
     styles:
       - CornerRadius=20
-
   - target: MenuFlyoutPresenter
     styles:
       - CornerRadius=20
-
   - target: 'MenuFlyoutPresenter > Border#PART_BackgroundBorder'
     styles:
       - CornerRadius=20
       - 'Background:=<WindhawkBlur BlurAmount="3" />'
       - BorderThickness=1
-
   - target: FlyoutBlurHost
     styles:
       - 'Background:=<WindhawkBlur BlurAmount="3" />'
-
   - target: 'StartButton, SearchButton'
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -66,7 +59,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=5,3,3,3
-
   - target: TaskButton
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -74,7 +66,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=3,3,3,3
-
   - target: Button#AppTitleButton
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -82,7 +73,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=3,3,3,3
-
   - target: 'DisplayButton, SoundButton, WifiButton, BluetoothButton, ResourceButton, BatteryButton, WeatherButton, RecycleBinButton, SettingsButton, ControlCenterButton'
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -90,7 +80,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=3,3,3,3
-
   - target: ClockButton
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -98,7 +87,6 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=3,3,3,3
-
   - target: MediaButton
     styles:
       - 'Background:=$GoldenGateBackground'
@@ -106,11 +94,11 @@ controlStyles:
       - BorderThickness=1
       - CornerRadius=10
       - Margin=3,3,3,3
-
   - target: MediaTransportButton
     styles:
       - 'Background:=$GoldenGateBackground'
       - BorderThickness=1
       - CornerRadius=10
+
 ```
 </details>

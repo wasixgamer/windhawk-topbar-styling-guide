@@ -34,6 +34,7 @@ After installing the mod, open its Settings tab and adjust the styles according 
   * [Task button Stylings](#task-button-stylings)
 * [Control center](#control-center)
   * [Status buttons](#status-buttons)
+  * [Control Center Tiles](#control-center-tiles)
   * [Flyout panels](#flyout-panels)
   * [Toggle switches](#toggle-switches)
 * [Start menu](#start-menu)
@@ -42,6 +43,8 @@ After installing the mod, open its Settings tab and adjust the styles according 
 * [Weather](#weather)
 * [Recycle bin](#recycle-bin)
 * [Resource monitor](#resource-monitor)
+* [System Tray](#system-tray)
+* [Notifications](#notifications)
 * [Colors](#colors)
 
 ## Themes
@@ -65,6 +68,7 @@ The TopBar mod adds a second, fully independent taskbar docked to the top of the
 - **Control centre** — Display (brightness, per-monitor sliders, Dark Mode, Night light), Sound (volume, per-app mixer, output device picker, mute), Wi-Fi (scan / connect / disconnect / password entry), Bluetooth (scan, pair, connect, battery level), Battery (percentage, health), Weather (current conditions, hourly forecast, location search), Recycle Bin (size, item count, empty with confirm), Resource Monitor (CPU / RAM / GPU tabs with live graph, GPU selector), and Media Player (album art, transport controls, live progress bar, audio-reactive visualizer).
 - **Start menu replacement** — custom Start with account panel, power menu, search box and a 5-column all-apps grid (Win32 shortcuts + UWP apps). Optional: make it the default for Win key and taskbar Start.
 - **Search replacement** — Spotlight-style search across apps, files, Windows Settings pages and Control Panel items. Optional: make it the default for Win+S / Win+Q and the taskbar search box.
+- **System Tray & Notifications** — Native tray icon overflow replacement and notification center integration.
 - **Full styling** via Control styles.
 - **Background translucency** tinting for the TopBar, and WindhawkBlur for flyouts and context menus.
 - **Import / Export** — save or restore the entire configuration as JSON.
@@ -72,7 +76,7 @@ The TopBar mod adds a second, fully independent taskbar docked to the top of the
 ### Supported components
 
 - Top taskbar (root, panels, every button)
-- Flyout panels (Display, Sound, Wi-Fi, Bluetooth, Battery, Weather, Recycle Bin, Resource Monitor, Control Center, Media Player)
+- Flyout panels (Display, Sound, Wi-Fi, Bluetooth, Battery, Weather, Recycle Bin, Resource Monitor, Control Center, Media Player, System Tray, Notifications)
 - Start menu and Search flyouts
 - Context menus (Start, Task buttons, Tray items, Search results, Start tiles)
 - All flyouts and menus including submenus
@@ -133,22 +137,20 @@ Style constants let you name a value once and reuse it across many rules. Define
 them under **Style constants** as `name=value` pairs, then reference them with
 `$name` anywhere in a style value:
 
-```yaml
-styleConstants:
-  - 'NeonAccent=#8FD9F0'
-  - 'NeonCard=#16243A'
-  - 'GlassBlur=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
+    styleConstants:
+      - 'NeonAccent=#8FD9F0'
+      - 'NeonCard=#16243A'
+      - 'GlassBlur=<WindhawkBlur BlurAmount="16" TintColor="#0E1B33" TintOpacity="0.65" />'
 
-controlStyles:
-  - target: SettingsButton
-    styles:
-      - 'Background:=$NeonCard'
-      - 'IconColor=$NeonAccent'
+    controlStyles:
+      - target: SettingsButton
+        styles:
+          - 'Background:=$NeonCard'
+          - 'IconColor=$NeonAccent'
 
-  - target: FlyoutBlurHost
-    styles:
-      - 'Background:=$GlassBlur'
-```
+      - target: FlyoutBlurHost
+        styles:
+          - 'Background:=$GlassBlur'
 
 Constants work in every value position, including inside `<WindhawkBlur …>`,
 gradients, and XAML fragments. The OS27 GoldenGate theme uses two constants
@@ -288,6 +290,8 @@ Targets:
     SettingsButton
     ControlCenterButton
     MediaButton
+    NotificationsButton
+    TrayIconButton
 
 Style:
 
@@ -295,6 +299,14 @@ Style:
     BorderBrush:=<color>
     BorderThickness=<number>
     CornerRadius=<radius>
+
+### Control Center Tiles
+
+Inside the Control Center flyout, the grid toggles use shared element names. You can style all of them at once, or target specific ones via their parent chain:
+
+    QuickToggleTile
+    ControlCenterCustomizeButton
+    ExpanderHeader
 
 ### Flyout panels
 
@@ -310,6 +322,8 @@ The flyout panel roots are:
     ResourceFlyoutRoot
     MediaFlyoutRoot
     ControlCenterFlyoutRoot
+    TrayFlyoutRoot
+    NotificationsFlyoutRoot
 
 Flyout shells (the presenter border behind every flyout) can be styled with:
 
@@ -334,7 +348,7 @@ Every control flyout shares these named elements:
 
 ### Toggle switches
 
-Toggle switches appear in the Wi-Fi and Bluetooth panel headers.
+Toggle switches appear in the Wi-Fi and Bluetooth panel headers, and Control Center.
 
 Targets:
 
@@ -420,6 +434,9 @@ Targets in the weather button and its flyout:
     WeatherCurrentTemp
     WeatherDesc
     WeatherMinMax
+    WeatherDayButton
+    WeatherHourlyHost
+    WeatherHourlyCell
 
 ## Recycle bin
 
@@ -453,6 +470,29 @@ Targets in the resource button and its flyout:
     InfoGpuLabel
     GpuSelector               — the GPU ComboBox
     StatLabel0..3 / StatValue0..3
+
+## System Tray
+
+Targets in the system tray flyout:
+
+    TrayFlyoutRoot
+    TrayIconRow
+    TrayIconTile
+    TrayIconTileImage
+    TrayIconTileGlyph
+
+## Notifications
+
+Targets in the notifications flyout:
+
+    NotificationsFlyoutRoot
+    NotificationsClearAllButton
+    NotificationsDoNotDisturbButton
+    WindowsNotificationCard
+    NotificationCloseButton
+    NotificationShowMoreButton
+    NotificationCloseAppButton
+    OpenNativeNotificationsRow
 
 ## Colors
 
