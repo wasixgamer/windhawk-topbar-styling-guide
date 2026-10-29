@@ -51,14 +51,20 @@ After installing the mod, open its Settings tab and adjust the styles according 
 
 Themes are collections of styles that can be selected from the **Theme** dropdown in the mod settings. Following is the list of themes available:
 
-| Link | Screenshot |
-| ----- | ---------- |
-| [GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) | [![GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/GreenBar/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) |
-| [NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) | [![NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/NoIslands/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) |
-| [OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) | [![OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/OS27%20GoldenGate/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) |
-| [Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) | [![Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/raw/main/Themes/Midnight%20Neon/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) |
-
+| Theme | Preview |
+|-------|---------|
+| [GreenBar](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) | [![GreenBar](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/HEAD/Themes/GreenBar/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/GreenBar) |
+| [NoIslands](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) | [![NoIslands](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/HEAD/Themes/NoIslands/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/NoIslands) |
+| [OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) | [![OS27 GoldenGate](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/dec72b4c5382da44b83c63b74f195fc4353493c6/Themes/OS27%20GoldenGate/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) |
+| [Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) | [![Midnight Neon](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/main/Themes/Midnight%20Neon/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) |
+| [Neon Blue](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Neon%20Blue) | [![Neon Blue](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/HEAD/Themes/Neon%20Blue/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Neon%20Blue) |
 More themes can be contributed to the mod. Contributions are welcome.
+
+### Interface previews
+
+| Start Menu | Search | Control Center |
+| :---: | :---: | :---: |
+| ![Start Menu](https://i.imgur.com/IDdi4go.png) | ![Search](https://i.imgur.com/nY53K5V.png) | ![Control Center](https://i.imgur.com/2VjdQIt.png) |
 
 ## Introduction
 
@@ -66,8 +72,8 @@ The TopBar mod adds a second, fully independent taskbar docked to the top of the
 
 - **Task list** — window icons, titles, click-to-activate, double-click maximize, per-window right-click menu. Can be swapped for a single **Application name** button showing the current foreground app.
 - **Control centre** — Display (brightness, per-monitor sliders, Dark Mode, Night light), Sound (volume, per-app mixer, output device picker, mute), Wi-Fi (scan / connect / disconnect / password entry), Bluetooth (scan, pair, connect, battery level), Battery (percentage, health), Weather (current conditions, hourly forecast, location search), Recycle Bin (size, item count, empty with confirm), Resource Monitor (CPU / RAM / GPU tabs with live graph, GPU selector), and Media Player (album art, transport controls, live progress bar, audio-reactive visualizer).
-- **Start menu replacement** — custom Start with account panel, power menu, search box and a 5-column all-apps grid (Win32 shortcuts + UWP apps). Optional: make it the default for Win key and taskbar Start.
-- **Search replacement** — Spotlight-style search across apps, files, Windows Settings pages and Control Panel items. Optional: make it the default for Win+S / Win+Q and the taskbar search box.
+- **Start menu replacement** — custom Start menu with account and power panels, a searchable app catalog, pinned apps, optional folders, and alignment controls. It can be assigned to the Start key and taskbar Start button.
+- **Search replacement** — Spotlight-style search across apps (including executable names), files, Windows Settings pages, subpages, and Control Panel items. Supported settings can expose quick toggles or a power-plan picker in results. It can be assigned to Win+S / Win+Q and the taskbar search button.
 - **System Tray & Notifications** — Native tray icon overflow replacement and notification center integration.
 - **Full styling** via Control styles.
 - **Background translucency** tinting for the TopBar, and WindhawkBlur for flyouts and context menus.
@@ -77,7 +83,7 @@ The TopBar mod adds a second, fully independent taskbar docked to the top of the
 
 - Top taskbar (root, panels, every button)
 - Flyout panels (Display, Sound, Wi-Fi, Bluetooth, Battery, Weather, Recycle Bin, Resource Monitor, Control Center, Media Player, System Tray, Notifications)
-- Start menu and Search flyouts
+- Start menu and Search flyouts, including pinned apps, folders, search results, and quick controls
 - Context menus (Start, Task buttons, Tray items, Search results, Start tiles)
 - All flyouts and menus including submenus
 
@@ -388,26 +394,47 @@ ones embedded in the topbar's Media button also use that name.
 
 ## Start menu
 
-The TopBar Start menu is a XAML flyout with several named elements:
+The TopBar Start menu is a XAML flyout. Its named elements include:
 
-    StartMenuSearchBox        — the search box at the top
-    StartMenuPowerButton      — power glyph button (right of the search box)
-    StartMenuAccountButton    — avatar / account button (left of the search box)
+    StartMenuSearchBox        — app search field
+    StartMenuPowerButton      — power menu button
+    StartMenuAccountButton    — account panel button
 
-App tiles in the grid use the shared `TaskButton`-like look but aren't
-individually named. Style them via the ancestor chain, e.g.:
+The app catalog can show pinned apps, folders, and the full app list in one
+scrollable view. Start Menu settings control pinned-section visibility, folders,
+and the menu's screen alignment. The taskbar Start button and the keyboard
+Start key can be configured to open this menu.
 
-    Grid > Button
+Folder shortcuts are rendered as buttons without individual XAML names; inspect
+them in UWPSpy and target them by their parent chain. App tiles can be styled
+through their common button template or by inspecting them in UWPSpy. Useful
+targets include:
+
+    StartMenuSearchBox
+    StartMenuPowerButton
+    StartMenuAccountButton
+    StartMenuPinnedApps       — pinned-app grid
+    StartMenuApps             — full app grid
 
 ## Search
 
-The Spotlight-style Search flyout:
+The Search flyout exposes these named elements:
 
-    SearchBlurHost            — the blur host border behind the whole flyout
-    SpotlightSearchBox        — the main search input
-    SearchAnchor              — hidden anchor Grid used for placement (do not style)
-    SearchResultRow           — individual result rows
+    SearchBlurHost            — background surface for the flyout
+    SpotlightSearchBox        — search input
+    SearchAnchor              — hidden placement anchor; do not style
+    SearchResultRow           — individual result cards
 
+Search can find apps by display name or executable, files, Settings pages and
+subheadings, and Control Panel items. Some Windows settings expose an inline
+toggle, while supported power-plan searches show a plan picker. Examples of
+quick controls include Dark mode, Transparency effects, Night light, animation
+effects, audio mute, pointer options, and accessibility keyboard features.
+Availability depends on the Windows setting and the current system.
+
+Search-result icons and cards can be styled with `SearchResultRow` and the
+associated descendant controls. The search box also appears in the Start menu;
+use `StartMenuSearchBox` to style that one.
 ## Media Player
 
 Targets in the media button and its flyout:
