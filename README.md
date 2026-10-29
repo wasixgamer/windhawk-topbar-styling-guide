@@ -58,13 +58,9 @@ Themes are collections of styles that can be selected from the **Theme** dropdow
 | [OS27 GoldenGate](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) | [![OS27 GoldenGate](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/dec72b4c5382da44b83c63b74f195fc4353493c6/Themes/OS27%20GoldenGate/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/OS27%20GoldenGate) |
 | [Midnight Neon](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) | [![Midnight Neon](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/main/Themes/Midnight%20Neon/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Midnight%20Neon) |
 | [Neon Blue](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Neon%20Blue) | [![Neon Blue](https://raw.githubusercontent.com/wasixgamer/windhawk-topbar-styling-guide/HEAD/Themes/Neon%20Blue/screenshot.png)](https://github.com/wasixgamer/windhawk-topbar-styling-guide/tree/main/Themes/Neon%20Blue) |
+
 More themes can be contributed to the mod. Contributions are welcome.
 
-### Interface previews
-
-| Start Menu | Search | Control Center |
-| :---: | :---: | :---: |
-| ![Start Menu](https://i.imgur.com/IDdi4go.png) | ![Search](https://i.imgur.com/nY53K5V.png) | ![Control Center](https://i.imgur.com/2VjdQIt.png) |
 
 ## Introduction
 
